@@ -3,8 +3,33 @@ import time
 from ./src/Tile import *
 from ./src/Player import *
 from ./src/Enemy import *
+playerHP = 10
+playerAtk = 1
+playerDef = 1
+playerX = 0
+playerY = 0
 
-PlayerInst = Player(1, 1, 10)
+def load():
+    loadfile = open("save", "r"):#GO
+    loadLines = loadfile.readlines().
+    playerAtk = loadLines[0]
+    playerDef = loadLines[1]
+    playerHP = loadLines[2]
+    playerX = loadLines[3]
+    playerY = loadLines[4]
+    loadLines.close()
+def save():
+    savefile = open("save", "w")
+    savefile.truncate()
+    savefile.write(playerAtk + "\n")
+    savefile.write(playerDef + "\n")
+    savefile.write(playerHP + "\n")
+    savefile.write(playerX + "\n")
+    savefile.write(playerY + "\n")
+    savefile.close()
+
+load()
+PlayerInst = Player(playerAtk, playerDef, playerHP, playerX, playerY)
 
 print("You are Kink. You are on a quest to rescue Princess Melda from a Mutant Ninja Turtle.")
 time.sleep(2)

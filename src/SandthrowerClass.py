@@ -1,3 +1,3 @@
-from Room import *
+from Enemy import *
 
 class SandThrower(Enemy):

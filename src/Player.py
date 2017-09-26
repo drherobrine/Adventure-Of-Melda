@@ -5,7 +5,13 @@ class Player:
         return self.defense
     def getHP(self):
         return self.HP
-    def __init__(self, attack, defense, HP):
+    def getPosX(self):
+        return self.posX
+    def getPosY(self):
+        return self.posY
+    def __init__(self, attack, defense, HP, posX, posY):
         self.attack = attack
         self.defense = defense
         self.HP = HP
+        self.posX = posX
+        self.posY = posY
